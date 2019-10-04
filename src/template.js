@@ -164,14 +164,14 @@ function getTagName(string, tagState, tagStateIndex) {
       tagName += char;
     }
   } else {
-    for (let i = tagStateIndex - 1; i >= 0; i--) {
+    for (let i = 1; i < tagStateIndex; i++) {
       const char = string[i];
 
       if (!RE_TAG_NAME.test(char)) {
         break;
       }
 
-      tagName = char + tagName;
+      tagName += char;
     }
   }
 
